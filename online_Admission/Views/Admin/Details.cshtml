@@ -1,0 +1,163 @@
+﻿@model online_Admission.Models.student_registration
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>student Registration</h4>
+    <hr />
+                   <img src="@Url.Content(@Model.r_image)" style="width:250px; height:250px;" />
+    <dl class="dl-horizontal">
+        <dt>
+Email: &nbsp;
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.r_cnic)
+        </dd>
+
+        <dt>
+            Password:   &nbsp;
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.r_password)
+        </dd>
+
+        <dt>
+            Fullname:&nbsp;
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.r_fullname)
+        </dd>
+
+        <dt>
+            Father's Name:&nbsp;
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.r_fathername)
+        </dd>
+
+        <dt>
+            Mobile Number:&nbsp;
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.r_mobile)
+        </dd>
+
+        <dt>
+            Home Phone:&nbsp;
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.r_phone)
+        </dd>
+
+        <dt>
+            HSC Result(GPA):&nbsp;
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.r_hsc_gpa)
+        </dd>
+
+        <dt>
+            SSC Result(GPA):&nbsp;
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.r_ssc_gpa)
+        </dd>
+
+        <dt>
+            Status:&nbsp;
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.r_status)
+        </dd>
+
+        <dt>
+            Applied Date:&nbsp;
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.r_date)
+        </dd>
+
+        <dt>
+            Image:&nbsp;
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.r_image)
+        </dd>
+
+        <dt>
+            SSC Marksheet:&nbsp;
+        </dt>
+
+        <dd>
+            <a href="@Url.Content(@Model.SSC_marksheet)">Download</a>
+
+            @*@Html.DisplayFor(model => model.SSC_marksheet)*@
+        </dd>
+
+        <dt>
+            HSC Marksheet:&nbsp;
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.HSC_marksheet)*@
+            <a href="@Url.Content(@Model.HSC_marksheet)">Download</a>
+
+
+        </dd>
+
+        <dt>
+            Category:&nbsp;
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category.category_name)
+        </dd>
+
+        <dt>
+            First Priority:&nbsp;
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.department.dept_name)
+        </dd>
+
+        <dt>
+            Second Priority:&nbsp;
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.department1.dept_name)
+        </dd>
+
+        <dt>
+            Third Priority:&nbsp;
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.department2.dept_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.r_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

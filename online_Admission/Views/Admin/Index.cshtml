@@ -1,0 +1,142 @@
+﻿@model IEnumerable<online_Admission.Models.student_registration>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Password
+        </th>
+        <th>
+            Fullname
+        </th>
+        <th>
+            Father's Name
+        </th>
+        <th>
+            Mobile Number
+        </th>
+        <th>
+            Home Phone
+        </th>
+        <th>
+            HSC Result
+        </th>
+        <th>
+            SSC Result
+        </th>
+        <th>
+            Status
+        </th>
+        <th>
+            Applied Date
+        </th>
+        <th>
+            Image
+        </th>
+        <th>
+            SSC Marksheet
+        </th>
+        <th>
+            HSC Marksheet
+        </th>
+        <th>
+            Category Name
+        </th>
+
+        <th>
+            First Priority
+        </th>
+
+        <th>
+            Second Priority
+        </th>
+
+
+        <th>
+            Third Priority
+        </th>
+
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.r_id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.r_cnic)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.r_password)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.r_fullname)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.r_fathername)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.r_mobile)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.r_phone)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.r_hsc_gpa)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.r_ssc_gpa)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.r_status)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.r_date)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.r_image)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SSC_marksheet)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.HSC_marksheet)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.category.category_name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.department.dept_name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.department1.dept_name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.department2.dept_name)
+    </td>
+    <td>
+        @Html.ActionLink("Approve", "Edit", new { id = item.r_id }) |
+        @Html.ActionLink("View", "Details", new { id = item.r_id }) |
+    </td>
+</tr>
+}
+
+</table>
+
+
+

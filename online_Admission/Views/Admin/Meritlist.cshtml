@@ -1,0 +1,39 @@
+﻿@model IEnumerable<online_Admission.Models.Merit>
+
+@{
+    ViewBag.Title = "Meritlist";
+}
+
+<h2>Meritlist</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Department Name
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Status 
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.department.dept_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.student_registration.r_cnic)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.status.status_name)
+        </td>
+        
+    </tr>
+}
+
+</table>

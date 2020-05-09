@@ -1,0 +1,68 @@
+﻿
+@model online_Admission.Models.studentviewmodel
+@{
+    ViewBag.Title = "profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.css"></script>
+<div class="container-fluid">
+    @if (Model != null)
+    {
+
+        <div class="row">
+            <div style="height:850px; background-color:#FFF" class="col-sm-3">
+                <img src="@Url.Content(Model.r_image)" style="height:250px; width:250px; margin-top:20px; " class="img-responsive img-rounded" />
+                <table class="table table-responsive" style="margin-top:50px">
+
+                    <tr><td>Applicant ID:</td><td>@Html.DisplayFor(model => model.r_id)</td></tr>
+                    <tr><td>Email:</td><td>@Html.DisplayFor(model => model.r_cnic)</td></tr>
+                    <tr><td>Name:</td><td>@Html.DisplayFor(model => model.r_fullname)</td></tr>
+                    <tr><td>Father's Name:</td><td>@Html.DisplayFor(model => model.r_fathername)</td></tr>
+                    <tr><td>Applied:</td><td>@Html.DisplayFor(model => model.r_date)</td></tr>
+                    <tr><td>Mobile:</td><td>@Html.DisplayFor(model => model.r_mobile)</td></tr>
+                    <tr><td>SSC Result:</td><td>@Html.DisplayFor(model => model.r_ssc_gpa)</td></tr>
+                    <tr><td>HSC Result</td><td>@Html.DisplayFor(model => model.r_hsc_gpa)</td></tr>
+                    <tr><td>SSC Result:</td><td>@Html.DisplayFor(model => model.r_ssc_gpa)</td></tr>
+                    <tr><td>SSC Marksheet:</td><td><a href="@Url.Content(Model.SSC_marksheet)" target="_blank">Download</a></td></tr>
+                    <tr><td>HSC Marksheet:</td><td><a href="@Url.Content(Model.HSC_marksheet)" target="_blank">Download</a></td></tr>
+
+                </table>
+            </div>
+            <h1 style="text-align:center; background-color:#b6ff00">Your Applied Status is @ViewBag.msg</h1>
+
+            <div style="height:850px; background-color:#fff" class="col-sm-9">
+                <div claa="row">
+                    <h1>Applied For</h1>
+                    <div class="col-sm-3">Priority-1: @Html.DisplayFor(model => model.r_p1)</div>
+                    <div class="col-sm-3">Priority-2: @Html.DisplayFor(model => model.r_p2)</div>
+                    <div class="col-sm-3">Priority-3: @Html.DisplayFor(model => model.r_p3)</div>
+
+                </div><br />
+
+                <div>
+                    @if(ViewBag.msg== "Applied" || ViewBag.msg == "Rejected")
+                    {
+                        @Html.ActionLink("Edit your Profile","Edit","student")
+                    }
+                    else
+                    {
+                        <p style="color: red">Your Account is locked Now! You cannot change any data...</p>
+                    }
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-12">
+                        <img src="~/Content/img/1.jpg" style="width:100%; height:550px" />
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    }
+  
+</div>

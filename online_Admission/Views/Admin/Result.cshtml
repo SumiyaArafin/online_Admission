@@ -1,0 +1,34 @@
+﻿@model online_Admission.Models.studentviewmodel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Result</title>
+</head>
+<body>
+    <div>
+
+
+        @using (Html.BeginForm("Result", "Admin", FormMethod.Post))
+
+        {
+            @Html.DropDownListFor(model => model.r_p1, ViewBag.departmentList as SelectList, "--select--", new { @class = "form-control" })
+            @*@Html.ValidationMessageFor(model => model.r_p1, "", new { @class = "text danger" })*@
+        <div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input type="submit" value="Generate Result" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+            }
+        </div>
+  
+
+</body>
+</html>

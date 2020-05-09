@@ -1,0 +1,9 @@
+﻿
+@{
+    ViewBag.Title = "successpage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Welcome @TempData["name"]</h1>
+<h2 style="color:#4cff00">Thank you for Applying on our Admission Portal. Your application will be Approved within 6 hours </h2>
+
+@Html.ActionLink("Goto Profile", "login", "Student")

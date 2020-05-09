@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="94ecd0b6f21c46478a63ce0a57203740" Name="Diagram1">
+        <EntityTypeShape EntityType="online_admissionModel.category" Width="1.5" PointX="3.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="online_admissionModel.department" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="online_admissionModel.Merit" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="online_admissionModel.status" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="online_admissionModel.student_registration" Width="1.5" PointX="6" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="online_admissionModel.Table" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="online_admissionModel.FK__student_r__r_cat__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="online_admissionModel.FK__Merit__m_dept_id__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="online_admissionModel.FK__student_re__r_p1__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="online_admissionModel.FK__student_re__r_p2__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="online_admissionModel.FK__student_re__r_p3__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="online_admissionModel.FK__Merit__m_applica__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="online_admissionModel.FK__Merit__m_appstat__47DBAE45" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
