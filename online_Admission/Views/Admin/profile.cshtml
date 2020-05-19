@@ -1,0 +1,43 @@
+﻿
+@model online_Admission.Models.adminviewmodel
+@{
+    ViewBag.Title = "profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.css"></script>
+<div class="container-fluid">
+    @if (Model != null)
+    {
+
+        <div class="row">
+            <div style="height:850px; background-color:#FFF" class="col-sm-3">
+                <img src="@Url.Content(Model.r_image)" style="height:250px; width:250px; margin-top:20px; " class="img-responsive img-rounded" />
+
+                <table class="table table-responsive" style="margin-top:50px">
+
+                    <tr><td>Admin ID:</td><td>@Html.DisplayFor(model => model.r_id)</td></tr>
+                    <tr><td>Email:</td><td>@Html.DisplayFor(model => model.r_email)</td></tr>
+                    <tr><td>Name:</td><td>@Html.DisplayFor(model => model.r_fullname)</td></tr>
+                    <tr><td>National ID:</td><td>@Html.DisplayFor(model => model.r_cnic)</td></tr>
+                    <tr><td>Mobile:</td><td>@Html.DisplayFor(model => model.r_mobile)</td></tr>
+
+                </table>
+            </div>
+
+            <div class="row">
+
+            </div>
+        </div>
+
+    }
+    <div>
+        @Html.ActionLink("Student details", "afterlogin", "Admin") <br/>
+        @Html.ActionLink("Adminpannel", "adminpannel", "Admin")
+
+    </div>
+
+</div>

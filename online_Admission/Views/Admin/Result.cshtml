@@ -2,33 +2,362 @@
 @{
     Layout = null;
 }
+<h2 style="text-align:center">Generate Result</h2>
 
 <!DOCTYPE html>
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Result</title>
+   
+        <meta name="viewport" content="width=device-width" />
+        <title>Result</title>
 </head>
 <body>
     <div>
-
-
-        @using (Html.BeginForm("Result", "Admin", FormMethod.Post))
-
+        @using (Html.BeginForm())
         {
-            @Html.DropDownListFor(model => model.r_p1, ViewBag.departmentList as SelectList, "--select--", new { @class = "form-control" })
-            @*@Html.ValidationMessageFor(model => model.r_p1, "", new { @class = "text danger" })*@
-        <div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <input type="submit" value="Generate Result" class="btn btn-default" />
-                </div>
+            @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+            &nbsp;  &nbsp; &nbsp; &nbsp;
+            &nbsp;  &nbsp; &nbsp; &nbsp;
+            &nbsp;  &nbsp; &nbsp; &nbsp;
+            &nbsp;  &nbsp; &nbsp; &nbsp;
+            &nbsp;  &nbsp; &nbsp; &nbsp;
+            &nbsp;  &nbsp; &nbsp; &nbsp;
+            &nbsp;  &nbsp; &nbsp; &nbsp;
+            &nbsp;  &nbsp; &nbsp; &nbsp;
+            &nbsp;  &nbsp; &nbsp; &nbsp;
+            &nbsp;  &nbsp; &nbsp; &nbsp;
+
+            <hr />
+            <div class="form-group  ">
+
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp;  &nbsp; &nbsp; &nbsp;
+                &nbsp; 
+
+
+                @using (Html.BeginForm("Result", "Admin", FormMethod.Post))
+
+                {
+
+                    @Html.DropDownListFor(model => model.r_p1, ViewBag.departmentList as SelectList, "--select--", new { @class = "form-control" })
+                    @*@Html.ValidationMessageFor(model => model.r_p1, "", new { @class = "text danger" })*@
+                    <div>
+                        <div class="form-group">
+
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+                            &nbsp;  &nbsp; &nbsp; &nbsp;
+
+
+
+                            @*<div class="col-sm-offset-2 col-sm-10">*@
+                            <input type="submit" value="Generate Result" class="btn btn-default" />
+                            @*</div>*@
+                        </div>
+                    </div>
+                }
             </div>
-        </div>
-            }
-        </div>
-  
+            </div>
+        }
+    <div>
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+        &nbsp;  &nbsp; &nbsp; &nbsp;
+
+
+        @Html.ActionLink("Adminpannel", "adminpannel", "Admin")
+
+    </div>
 
 </body>
 </html>

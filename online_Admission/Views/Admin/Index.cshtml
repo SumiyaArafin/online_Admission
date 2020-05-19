@@ -1,142 +1,259 @@
-﻿@model IEnumerable<online_Admission.Models.student_registration>
-
+﻿@model online_Admission.Models.adminviewmodel
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            ID
-        </th>
-        <th>
-            Email
-        </th>
-        <th>
-            Password
-        </th>
-        <th>
-            Fullname
-        </th>
-        <th>
-            Father's Name
-        </th>
-        <th>
-            Mobile Number
-        </th>
-        <th>
-            Home Phone
-        </th>
-        <th>
-            HSC Result
-        </th>
-        <th>
-            SSC Result
-        </th>
-        <th>
-            Status
-        </th>
-        <th>
-            Applied Date
-        </th>
-        <th>
-            Image
-        </th>
-        <th>
-            SSC Marksheet
-        </th>
-        <th>
-            HSC Marksheet
-        </th>
-        <th>
-            Category Name
-        </th>
+<div class="container" style="width:100%; background-color: #b9e4aa; margin-top: 100px">
+    <h2 style="text-align:center; background-color:white">Admin Registration Form</h2>
+    <h2>@ViewBag.msg</h2>
 
-        <th>
-            First Priority
-        </th>
-
-        <th>
-            Second Priority
-        </th>
+    @using (Html.BeginForm("Create", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+<div class="form-horizontal">
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Email:</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.r_email, new { @class = "form-control", @placeholder = "Email" })
+            @Html.ValidationMessageFor(model => model.r_email, "", new { @class = "text danger" })
 
 
-        <th>
-            Third Priority
-        </th>
-
-    </tr>
-
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.r_id)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.r_cnic)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.r_password)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.r_fullname)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.r_fathername)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.r_mobile)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.r_phone)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.r_hsc_gpa)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.r_ssc_gpa)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.r_status)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.r_date)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.r_image)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.SSC_marksheet)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.HSC_marksheet)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.category.category_name)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.department.dept_name)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.department1.dept_name)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.department2.dept_name)
-    </td>
-    <td>
-        @Html.ActionLink("Approve", "Edit", new { id = item.r_id }) |
-        @Html.ActionLink("View", "Details", new { id = item.r_id }) |
-    </td>
-</tr>
-}
-
-</table>
+        </div>
+    </div>
 
 
 
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">Password</label>
+        <div class="col-sm-10">
+            @Html.PasswordFor(model => model.r_password, new { @class = "form-control", @placeholder = "Password" })
+            @Html.ValidationMessageFor(model => model.r_password, "", new { @class = "text danger" })
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">Full Name</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.r_fullname, new { @class = "form-control", @placeholder = "Full Name" })
+            @Html.ValidationMessageFor(model => model.r_fullname, "", new { @class = "text danger" })
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">Mobile:</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.r_mobile, new { @class = "form-control", @placeholder = "Mobile Number" })
+            @Html.ValidationMessageFor(model => model.r_mobile, "", new { @class = "text danger" })
+
+        </div>
+    </div>
+
+
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">National ID Number:</label>
+            <div class="col-sm-10">
+                @Html.TextBoxFor(model => model.r_cnic, new { @class = "form-control", @placeholder = "National ID" })
+                @Html.ValidationMessageFor(model => model.r_cnic, "", new { @class = "text danger" })
+
+
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Upload Image:</label>
+            <div class="col-sm-10">
+                <input type="file" name="imgfile" id="imgfile" class="from-control" />
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    }
+</div>
+<div>
+    @Html.ActionLink("Back to Adminpannel", "adminpannel", "Admin")
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+@*<!DOCTYPE html>
+
+    <html>
+    <head>
+        <link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+        <link rel="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" />
+
+
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+
+    </head>
+    <body>
+        <div class="agile-header">
+            <h1>Student Admission System</h1>
+            <h3> <marquee behavior="alternate"><p>University</p></marquee></h3>
+        </div>
+
+        //header
+        main
+        <div class="agileits-main" style="height:500px; padding-top:50px; border-radius:50px 50px 50px ">
+            <div class="wrap">
+                <form action="#" method="post">
+                    <ul>
+                        <li class="text">CNIC : </li>
+                        <li>
+                            @Html.TextBoxFor(model => model.r_cnic, new { @class = "form-control", @placeholder = "Cnic" });
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="text">Password : </li>
+                        <li>
+                            @Html.PasswordFor(model => model.r_password, new { @class = "form-control", @placeholder = "Password" });
+
+                        </li>
+
+                    </ul>
+                    <ul>
+                        <li class="text">Full Name : </li>
+                        <li>
+                            @Html.TextBoxFor(model => model.r_fullname, new { @class = "form-control", @placeholder = "Full Name" });
+
+                        </li>
+
+                    </ul>
+
+
+
+                    <ul>
+                        <li class="text">Father's Name : </li>
+                        <li>
+                            @Html.TextBoxFor(model => model.r_fathername, new { @class = "form-control", @placeholder = "Father's Name" });
+
+                        </li>
+
+                    </ul>
+
+                    <ul>
+                        <li class="text">Mobile : </li>
+                        <li>
+                            @Html.TextBoxFor(model => model.r_mobile, new { @class = "form-control", @placeholder = "Mobile Number" });
+
+                        </li>
+
+
+                    </ul>
+
+                    <ul>
+                        <li class="text">Home Phone : </li>
+                        <li>
+                            @Html.TextBoxFor(model => model.r_phone, new { @class = "form-control", @placeholder = "Home Phone Number" });
+
+                        </li>
+
+
+                    </ul>
+                    <ul>
+                        <li class="text">HSC Result : </li>
+                        <li>
+                            @Html.TextBoxFor(model => model.r_hsc_gpa, new { @class = "form-control", @placeholder = "HSC Result" });
+
+                        </li>
+
+
+                    </ul>
+                    <ul>
+                        <li class="text">SSC Result : </li>
+                        <li>
+                            @Html.TextBoxFor(model => model.r_ssc_gpa, new { @class = "form-control", @placeholder = "SSC Result" });
+
+                        </li>
+
+
+                    </ul>
+                    <ul>
+                        <li class="text">Priority #1 : </li>
+
+                        <li>
+                            @Html.DropDownListFor(model => model.r_p1, ViewBag.departmentList as SelectList, "--select--", new { @class = "form-control" });
+
+                        </li>
+
+
+                    </ul>
+                    <ul>
+                        <li class="text">Priority #2 : </li>
+
+                        <li>
+                            @Html.DropDownListFor(model => model.r_p2, ViewBag.departmentList as SelectList, "--select--", new { @class = "form-control" });
+
+                        </li>
+
+
+                    </ul>
+
+                    <ul>
+                        <li class="text">Priority #3 : </li>
+
+                        <li>
+                            @Html.DropDownListFor(model => model.r_p3, ViewBag.departmentList as SelectList, "--select--", new { @class = "form-control" });
+
+                        </li>
+
+
+                    </ul>
+
+                    <ul>
+                        <li class="text">Upload Image : </li>
+                        <li>
+                            <input type="file" name="imgfile" id="imgfile" class="from-control" />
+
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="text">Upload SSC Marksheet : </li>
+                        <li>
+                            <input type="file" name="sscfile" id="sscfile" class="from-control" />
+
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="text">Upload HSC Marksheet : </li>
+                        <li>
+                            <input type="file" name="hscfile" id="hscfile" class="from-control" />
+
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <li class="text">address&nbsp; : </li>
+                        <li><input name="addr 1" type="text" required /></li>
+                    </ul>
+                    <ul>
+                        <li class="text">Country : </li>
+                        <li><input name="country" type="text" required /></li>
+                    </ul>
+                    <div class="clear">     </div>
+                    <div class="agile-submit">
+                        <input type="submit" value="submit" style="background-color:red">
+                        <input type="reset" value="reset" style="background-color:indigo">
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </body>
+    </html>*@

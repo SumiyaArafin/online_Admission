@@ -1,0 +1,170 @@
+﻿@model online_Admission.Models.student_registration
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>student_registration</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.r_id)
+
+        <div class="form-group">
+            <div class="col-md-10">
+                <img src="@Url.Content(Model.r_image)" style="width:250px; height:250px;" />
+
+                @*@Html.EditorFor(model => model.r_image, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.r_image, "", new { @class = "text-danger" })*@
+
+
+
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Email:</label>
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.r_cnic, new { htmlAttributes = new { @class = "form-control", @readonly = "Readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Password:</label>
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.r_password, new { htmlAttributes = new { @class = "form-control", @readonly = "Readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Full Name:</label>
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.r_fullname, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Father's Name:</label>
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.r_fathername, new { htmlAttributes = new { @class = "form-control", @readonly = "Readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Mobile Number:</label>
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.r_mobile, new { htmlAttributes = new { @class = "form-control", @readonly = "Readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Phone Number:</label>
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.r_phone, new { htmlAttributes = new { @class = "form-control", @readonly = "Readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">HSC Result:</label>
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.r_hsc_gpa, new { htmlAttributes = new { @class = "form-control", @readonly = "Readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">SSC Result:</label>
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.r_ssc_gpa, new { htmlAttributes = new { @class = "form-control", @readonly = "Readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Status:</label>
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.r_status, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Date:</label>
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.r_date, new { htmlAttributes = new { @class = "form-control", @readonly = "Readonly" } })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.r_image, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.r_image, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.r_image, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Priority 1:</label>
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.r_p1, new { htmlAttributes = new { @class = "form-control", @readonly = "Readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Priority 2:</label>
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.r_p2, new { htmlAttributes = new { @class = "form-control", @readonly = "Readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Priority 3:</label>
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.r_p3, new { htmlAttributes = new { @class = "form-control", @readonly = "Readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Category:</label>
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.r_cat, new { htmlAttributes = new { @class = "form-control", @readonly = "Readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">SSC Marksheet:</label>
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.SSC_marksheet, new { htmlAttributes = new { @class = "form-control" } })*@
+                <a href="@Url.Content(Model.SSC_marksheet)">Download</a>
+
+
+                @Html.ValidationMessageFor(model => model.SSC_marksheet, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">HSC Marksheet:</label>
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.HSC_marksheet, new { htmlAttributes = new { @class = "form-control" } })*@
+                <a href="@Url.Content(Model.HSC_marksheet)">Download</a>
+
+                @Html.ValidationMessageFor(model => model.HSC_marksheet, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Delete" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "adminpannel")
+</div>

@@ -5,6 +5,19 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="online_admissionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="admin_registration">
+          <Key>
+            <PropertyRef Name="r_id" />
+          </Key>
+          <Property Name="r_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="r_email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="r_cnic" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="r_password" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="r_fullname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="r_mobile" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="r_date" Type="date" Nullable="false" />
+          <Property Name="r_image" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
         <EntityType Name="category">
           <Key>
             <PropertyRef Name="category_id" />
@@ -149,6 +162,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="online_admissionModelStoreContainer">
+          <EntitySet Name="admin_registration" EntityType="Self.admin_registration" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="category" EntityType="Self.category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="department" EntityType="Self.department" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Merit" EntityType="Self.Merit" Schema="dbo" store:Type="Tables" />
@@ -189,6 +203,19 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="online_admissionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="admin_registration">
+          <Key>
+            <PropertyRef Name="r_id" />
+          </Key>
+          <Property Name="r_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="r_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="r_cnic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="r_password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="r_fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="r_mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="r_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="r_image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
         <EntityType Name="category">
           <Key>
             <PropertyRef Name="category_id" />
@@ -346,7 +373,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="online_admissionEntities3" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="online_admissionEntities7" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="admin_registration" EntityType="Self.admin_registration" />
           <EntitySet Name="categories" EntityType="Self.category" />
           <EntitySet Name="departments" EntityType="Self.department" />
           <EntitySet Name="Merits" EntityType="Self.Merit" />
@@ -387,7 +415,21 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="online_admissionModelStoreContainer" CdmEntityContainer="online_admissionEntities3">
+        <EntityContainerMapping StorageEntityContainer="online_admissionModelStoreContainer" CdmEntityContainer="online_admissionEntities7">
+          <EntitySetMapping Name="admin_registration">
+            <EntityTypeMapping TypeName="online_admissionModel.admin_registration">
+              <MappingFragment StoreEntitySet="admin_registration">
+                <ScalarProperty Name="r_id" ColumnName="r_id" />
+                <ScalarProperty Name="r_email" ColumnName="r_email" />
+                <ScalarProperty Name="r_cnic" ColumnName="r_cnic" />
+                <ScalarProperty Name="r_password" ColumnName="r_password" />
+                <ScalarProperty Name="r_fullname" ColumnName="r_fullname" />
+                <ScalarProperty Name="r_mobile" ColumnName="r_mobile" />
+                <ScalarProperty Name="r_date" ColumnName="r_date" />
+                <ScalarProperty Name="r_image" ColumnName="r_image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="categories">
             <EntityTypeMapping TypeName="online_admissionModel.category">
               <MappingFragment StoreEntitySet="category">

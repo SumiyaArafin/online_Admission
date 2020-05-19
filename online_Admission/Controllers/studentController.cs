@@ -14,7 +14,7 @@ namespace online_Admission.Controllers
 {            
     public class studentController : Controller
     {
-        private online_admissionEntities3 db = new online_admissionEntities3();
+        private online_admissionEntities7 db = new online_admissionEntities7();
 
 
         // GET: student
@@ -54,6 +54,7 @@ namespace online_Admission.Controllers
             else
             {
                 student_registration s = new student_registration();
+
 
                 s.r_cnic = svm.r_cnic;
                 s.r_password = svm.r_password;
@@ -253,7 +254,38 @@ namespace online_Admission.Controllers
             return path;
         }
 
-       
+
+
+        public ActionResult Meritlist()
+        {
+            studentviewmodel svm = new studentviewmodel();
+
+            if (Session["id"] == null)
+            {
+                return RedirectToAction("login");
+
+            }
+            else
+            {
+
+                List<Merit> li = db.Merits.ToList();
+
+
+
+
+                return View(li);
+            }
+        }
+
+        public ActionResult logout()
+        {
+            adminviewmodel svm = new adminviewmodel();
+
+            Session["id"] = null;
+            return RedirectToAction("login");
+        }
+
+
         [HttpGet]
         //[ValidateAntiForgeryToken]
         public ActionResult edit()

@@ -1,0 +1,9 @@
+﻿
+@{
+    ViewBag.Title = "successpage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Welcome @TempData["name"]</h1>
+<h2 style="color:#4cff00">Added Successfully</h2>
+
+@Html.ActionLink("Goto Adminpannel", "adminpannel", "Admin")

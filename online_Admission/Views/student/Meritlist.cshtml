@@ -33,15 +33,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.status.status_name)
             </td>
-            <td>
-                @Html.ActionLink("Delete", "Delete_m", new { id = item.m_applicant_id }) |
 
-            </td>
         </tr>
-
-}
+    }
 
 </table>
 <div>
-    @Html.ActionLink("Adminpannel", "adminpannel", "Admin")
+    @Html.ActionLink("Go to Profile", "profile", "student")
 </div>

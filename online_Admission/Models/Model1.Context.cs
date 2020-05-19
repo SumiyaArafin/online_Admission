@@ -13,10 +13,10 @@ namespace online_Admission.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class online_admissionEntities3 : DbContext
+    public partial class online_admissionEntities7 : DbContext
     {
-        public online_admissionEntities3()
-            : base("name=online_admissionEntities3")
+        public online_admissionEntities7()
+            : base("name=online_admissionEntities7")
         {
         }
     
@@ -25,6 +25,7 @@ namespace online_Admission.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<admin_registration> admin_registration { get; set; }
         public virtual DbSet<category> categories { get; set; }
         public virtual DbSet<department> departments { get; set; }
         public virtual DbSet<Merit> Merits { get; set; }

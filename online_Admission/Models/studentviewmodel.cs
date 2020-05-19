@@ -76,6 +76,7 @@ namespace online_Admission.Models
         public Nullable<int> m_appstatus_id { get; set; }
 
         public string status_name { get; set; }
+
     
     }
 }

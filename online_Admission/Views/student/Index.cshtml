@@ -1,327 +1,331 @@
 ﻿@model online_Admission.Models.studentviewmodel
 @{
     ViewBag.Title = "Index";
-    }
+}
 
 
 <div class="container" style="width:100%; background-color: #b9e4aa; margin-top: 100px">
-<h2 style="text-align:center; background-color:white">Admission Form</h2>
-<h2>@ViewBag.msg</h2>
+    <h2 style="text-align:center; background-color:white">Admission Form</h2>
+    <h2>@ViewBag.msg</h2>
 
-@using (Html.BeginForm("Create", "student", FormMethod.Post,new { enctype ="multipart/form-data"}))
-{
-    @Html.AntiForgeryToken()
-<div class="form-horizontal">
-    <div class="form-group">
-        <label class="control-label col-sm-2" for="email">Email:</label>
-        <div class="col-sm-10">
-            @Html.TextBoxFor(model => model.r_cnic, new { @class = "form-control", @placeholder = "Email" })
-            @Html.ValidationMessageFor(model => model.r_cnic, "", new { @class = "text danger" })
-
-
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-sm-2" for="pwd">Password</label>
-        <div class="col-sm-10">
-            @Html.PasswordFor(model => model.r_password, new { @class = "form-control", @placeholder = "Password" })
-            @Html.ValidationMessageFor(model => model.r_password, "", new { @class = "text danger" })
-
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-sm-2" for="pwd">Full Name</label>
-        <div class="col-sm-10">
-            @Html.TextBoxFor(model => model.r_fullname, new { @class = "form-control", @placeholder = "Full Name" })
-            @Html.ValidationMessageFor(model => model.r_fullname, "", new { @class = "text danger" })
-
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-sm-2" for="pwd">Father's Name:</label>
-        <div class="col-sm-10">
-            @Html.TextBoxFor(model => model.r_fathername, new { @class = "form-control", @placeholder = "Father's Name" })
-            @Html.ValidationMessageFor(model => model.r_fathername, "", new { @class = "text danger" })
-
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-sm-2" for="pwd">Mobile:</label>
-        <div class="col-sm-10">
-            @Html.TextBoxFor(model => model.r_mobile, new { @class = "form-control", @placeholder = "Mobile Number" })
-            @Html.ValidationMessageFor(model => model.r_mobile, "", new { @class = "text danger" })
-
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-sm-2" for="pwd">Home Phone Number:</label>
-        <div class="col-sm-10">
-            @Html.TextBoxFor(model => model.r_phone, new { @class = "form-control", @placeholder = "Home Phone Number" })
-            @Html.ValidationMessageFor(model => model.r_phone, "", new { @class = "text danger" })
-
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-sm-2" for="pwd">HSC Result:</label>
-        <div class="col-sm-10">
-            @Html.TextBoxFor(model => model.r_hsc_gpa, new { @class = "form-control", @placeholder = "HSC Result" })
-            @Html.ValidationMessageFor(model => model.r_hsc_gpa, "", new { @class = "text danger" })
-
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-sm-2" for="pwd">SSC Result:</label>
-        <div class="col-sm-10">
-            @Html.TextBoxFor(model => model.r_ssc_gpa, new { @class = "form-control", @placeholder = "SSC Result" })
-            @Html.ValidationMessageFor(model => model.r_ssc_gpa, "", new { @class = "text danger" })
-
-        </div>
-    </div>
+    @using (Html.BeginForm("Create", "student", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">Email:</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.r_cnic, new { @class = "form-control", @placeholder = "Email" })
+                    @Html.ValidationMessageFor(model => model.r_cnic, "", new { @class = "text danger" })
 
 
-    <div class="form-group">
-        <label class="control-label col-sm-2" for="pwd">Category:</label>
-
-        <div class="col-sm-10">
-            @Html.DropDownListFor(model => model.r_cat, ViewBag.categoryList as SelectList, "--select--", new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.r_cat, "", new { @class = "text danger" })
-
-        </div>
-    </div>
-    <hr />
-    <div class="form-group">
-
-            <label class="control-label col-sm-2" for="email">Upload Documents</label><br /><br />
-        </div>
-    
-        <div class="form-group">
-            <label class="control-label col-sm-2" for="pwd">Upload Image:</label>
-            <div class="col-sm-10">
-                <input type="file" name="imgfile" id="imgfile" class="from-control" />
-
+                </div>
             </div>
-        </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Password</label>
+                <div class="col-sm-10">
+                    @Html.PasswordFor(model => model.r_password, new { @class = "form-control", @placeholder = "Password" })
+                    @Html.ValidationMessageFor(model => model.r_password, "", new { @class = "text danger" })
 
-
-        <div class="form-group">
-            <label class="control-label col-sm-2" for="pwd">HSC Marksheet:</label>
-            <div class="col-sm-10">
-                <input type="file" name="HSCfile" id="HSCfile" class="from-control"required="required" />
-
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-sm-2" for="pwd">SSC Marksheet:</label>
-            <div class="col-sm-10">
-                <input type="file" name="SSCfile" id="SSCfile" class="from-control" required="required" />
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Full Name</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.r_fullname, new { @class = "form-control", @placeholder = "Full Name" })
+                    @Html.ValidationMessageFor(model => model.r_fullname, "", new { @class = "text danger" })
 
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-sm-2" for="pwd">Priority #1:</label>
-            <div class="col-sm-10">
-                @Html.DropDownListFor(model => model.r_p1, ViewBag.departmentList as SelectList, "--select--", new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.r_p1, "", new { @class = "text danger" })
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Father's Name:</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.r_fathername, new { @class = "form-control", @placeholder = "Father's Name" })
+                    @Html.ValidationMessageFor(model => model.r_fathername, "", new { @class = "text danger" })
 
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-sm-2" for="pwd">Priority #2:</label>
-            <div class="col-sm-10">
-                @Html.DropDownListFor(model => model.r_p2, ViewBag.departmentList as SelectList, "--select--", new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.r_p2, "", new { @class = "text danger" })
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Mobile:</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.r_mobile, new { @class = "form-control", @placeholder = "Mobile Number" })
+                    @Html.ValidationMessageFor(model => model.r_mobile, "", new { @class = "text danger" })
 
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-sm-2" for="pwd">Priority #3:</label>
-            <div class="col-sm-10">
-                @Html.DropDownListFor(model => model.r_p3, ViewBag.departmentList as SelectList, "--select--", new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.r_p3, "", new { @class = "text danger" })
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Home Phone Number:</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.r_phone, new { @class = "form-control", @placeholder = "Home Phone Number" })
+                    @Html.ValidationMessageFor(model => model.r_phone, "", new { @class = "text danger" })
 
+                </div>
             </div>
-        </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">HSC Result:</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.r_hsc_gpa, new { @class = "form-control", @placeholder = "HSC Result" })
+                    @Html.ValidationMessageFor(model => model.r_hsc_gpa, "", new { @class = "text danger" })
 
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                </div>
             </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">SSC Result:</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.r_ssc_gpa, new { @class = "form-control", @placeholder = "SSC Result" })
+                    @Html.ValidationMessageFor(model => model.r_ssc_gpa, "", new { @class = "text danger" })
+
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Category:</label>
+
+                <div class="col-sm-10">
+                    @Html.DropDownListFor(model => model.r_cat, ViewBag.categoryList as SelectList, "--select--", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.r_cat, "", new { @class = "text danger" })
+
+                </div>
+            </div>
+            <hr />
+            <div class="form-group">
+
+                <label class="control-label col-sm-2" for="email">Upload Documents</label><br /><br />
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Upload Image:</label>
+                <div class="col-sm-10">
+                    <input type="file" name="imgfile" id="imgfile" class="from-control" />
+
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">HSC Marksheet:</label>
+                <div class="col-sm-10">
+                    <input type="file" name="HSCfile" id="HSCfile" class="from-control" required="required" />
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">SSC Marksheet:</label>
+                <div class="col-sm-10">
+                    <input type="file" name="SSCfile" id="SSCfile" class="from-control" required="required" />
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Priority #1:</label>
+                <div class="col-sm-10">
+                    @Html.DropDownListFor(model => model.r_p1, ViewBag.departmentList as SelectList, "--select--", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.r_p1, "", new { @class = "text danger" })
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Priority #2:</label>
+                <div class="col-sm-10">
+                    @Html.DropDownListFor(model => model.r_p2, ViewBag.departmentList as SelectList, "--select--", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.r_p2, "", new { @class = "text danger" })
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Priority #3:</label>
+                <div class="col-sm-10">
+                    @Html.DropDownListFor(model => model.r_p3, ViewBag.departmentList as SelectList, "--select--", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.r_p3, "", new { @class = "text danger" })
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+
+
+
         </div>
-
-
-
-    </div>
 
 
     }
 </div>
+<div>
+    @Html.ActionLink("Login", "login")
+</div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
 @*<!DOCTYPE html>
 
-<html>
-<head>
-    <link href="~/Content/StyleSheet1.css" rel="stylesheet" />
-    <link rel="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" />
+    <html>
+    <head>
+        <link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+        <link rel="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" />
 
 
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
 
-</head>
-<body>
-    <div class="agile-header">
-        <h1>Student Admission System</h1>
-        <h3> <marquee behavior="alternate"><p>University</p></marquee></h3>
-    </div>
-
-    //header
-    main
-    <div class="agileits-main" style="height:500px; padding-top:50px; border-radius:50px 50px 50px ">
-        <div class="wrap">
-            <form action="#" method="post">
-                <ul>
-                    <li class="text">CNIC : </li>
-                    <li>
-                        @Html.TextBoxFor(model => model.r_cnic, new { @class = "form-control", @placeholder = "Cnic" });
-                    </li>
-                </ul>
-                <ul>
-                    <li class="text">Password : </li>
-                    <li>
-                        @Html.PasswordFor(model => model.r_password, new { @class = "form-control", @placeholder = "Password" });
-
-                    </li>
-
-                </ul>
-                <ul>
-                    <li class="text">Full Name : </li>
-                    <li>
-                        @Html.TextBoxFor(model => model.r_fullname, new { @class = "form-control", @placeholder = "Full Name" });
-
-                    </li>
-
-                </ul>
-
-
-
-                <ul>
-                    <li class="text">Father's Name : </li>
-                    <li>
-                        @Html.TextBoxFor(model => model.r_fathername, new { @class = "form-control", @placeholder = "Father's Name" });
-
-                    </li>
-
-                </ul>
-
-                <ul>
-                    <li class="text">Mobile : </li>
-                    <li>
-                        @Html.TextBoxFor(model => model.r_mobile, new { @class = "form-control", @placeholder = "Mobile Number" });
-
-                    </li>
-
-
-                </ul>
-
-                <ul>
-                    <li class="text">Home Phone : </li>
-                    <li>
-                        @Html.TextBoxFor(model => model.r_phone, new { @class = "form-control", @placeholder = "Home Phone Number" });
-
-                    </li>
-
-
-                </ul>
-                <ul>
-                    <li class="text">HSC Result : </li>
-                    <li>
-                        @Html.TextBoxFor(model => model.r_hsc_gpa, new { @class = "form-control", @placeholder = "HSC Result" });
-
-                    </li>
-
-
-                </ul>
-                <ul>
-                    <li class="text">SSC Result : </li>
-                    <li>
-                        @Html.TextBoxFor(model => model.r_ssc_gpa, new { @class = "form-control", @placeholder = "SSC Result" });
-
-                    </li>
-
-
-                </ul>
-                <ul>
-                    <li class="text">Priority #1 : </li>
-
-                    <li>
-                        @Html.DropDownListFor(model => model.r_p1, ViewBag.departmentList as SelectList, "--select--", new { @class = "form-control" });
-
-                    </li>
-
-
-                </ul>
-                <ul>
-                    <li class="text">Priority #2 : </li>
-
-                    <li>
-                        @Html.DropDownListFor(model => model.r_p2, ViewBag.departmentList as SelectList, "--select--", new { @class = "form-control" });
-
-                    </li>
-
-
-                </ul>
-
-                <ul>
-                    <li class="text">Priority #3 : </li>
-
-                    <li>
-                        @Html.DropDownListFor(model => model.r_p3, ViewBag.departmentList as SelectList, "--select--", new { @class = "form-control" });
-
-                    </li>
-
-
-                </ul>
-
-                <ul>
-                    <li class="text">Upload Image : </li>
-                    <li>
-                        <input type="file" name="imgfile" id="imgfile" class="from-control" />
-
-                    </li>
-                </ul>
-                <ul>
-                    <li class="text">Upload SSC Marksheet : </li>
-                    <li>
-                        <input type="file" name="sscfile" id="sscfile" class="from-control" />
-
-                    </li>
-                </ul>
-                <ul>
-                    <li class="text">Upload HSC Marksheet : </li>
-                    <li>
-                        <input type="file" name="hscfile" id="hscfile" class="from-control" />
-
-                    </li>
-                </ul>
-
-                <ul>
-                    <li class="text">address&nbsp; : </li>
-                    <li><input name="addr 1" type="text" required /></li>
-                </ul>
-                <ul>
-                    <li class="text">Country : </li>
-                    <li><input name="country" type="text" required /></li>
-                </ul>
-                <div class="clear">     </div>
-                <div class="agile-submit">
-                    <input type="submit" value="submit" style="background-color:red">
-                    <input type="reset" value="reset" style="background-color:indigo">
-
-                </div>
-            </form>
+    </head>
+    <body>
+        <div class="agile-header">
+            <h1>Student Admission System</h1>
+            <h3> <marquee behavior="alternate"><p>University</p></marquee></h3>
         </div>
-    </div>
 
-</body>
-</html>*@
+        //header
+        main
+        <div class="agileits-main" style="height:500px; padding-top:50px; border-radius:50px 50px 50px ">
+            <div class="wrap">
+                <form action="#" method="post">
+                    <ul>
+                        <li class="text">CNIC : </li>
+                        <li>
+                            @Html.TextBoxFor(model => model.r_cnic, new { @class = "form-control", @placeholder = "Cnic" });
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="text">Password : </li>
+                        <li>
+                            @Html.PasswordFor(model => model.r_password, new { @class = "form-control", @placeholder = "Password" });
+
+                        </li>
+
+                    </ul>
+                    <ul>
+                        <li class="text">Full Name : </li>
+                        <li>
+                            @Html.TextBoxFor(model => model.r_fullname, new { @class = "form-control", @placeholder = "Full Name" });
+
+                        </li>
+
+                    </ul>
+
+
+
+                    <ul>
+                        <li class="text">Father's Name : </li>
+                        <li>
+                            @Html.TextBoxFor(model => model.r_fathername, new { @class = "form-control", @placeholder = "Father's Name" });
+
+                        </li>
+
+                    </ul>
+
+                    <ul>
+                        <li class="text">Mobile : </li>
+                        <li>
+                            @Html.TextBoxFor(model => model.r_mobile, new { @class = "form-control", @placeholder = "Mobile Number" });
+
+                        </li>
+
+
+                    </ul>
+
+                    <ul>
+                        <li class="text">Home Phone : </li>
+                        <li>
+                            @Html.TextBoxFor(model => model.r_phone, new { @class = "form-control", @placeholder = "Home Phone Number" });
+
+                        </li>
+
+
+                    </ul>
+                    <ul>
+                        <li class="text">HSC Result : </li>
+                        <li>
+                            @Html.TextBoxFor(model => model.r_hsc_gpa, new { @class = "form-control", @placeholder = "HSC Result" });
+
+                        </li>
+
+
+                    </ul>
+                    <ul>
+                        <li class="text">SSC Result : </li>
+                        <li>
+                            @Html.TextBoxFor(model => model.r_ssc_gpa, new { @class = "form-control", @placeholder = "SSC Result" });
+
+                        </li>
+
+
+                    </ul>
+                    <ul>
+                        <li class="text">Priority #1 : </li>
+
+                        <li>
+                            @Html.DropDownListFor(model => model.r_p1, ViewBag.departmentList as SelectList, "--select--", new { @class = "form-control" });
+
+                        </li>
+
+
+                    </ul>
+                    <ul>
+                        <li class="text">Priority #2 : </li>
+
+                        <li>
+                            @Html.DropDownListFor(model => model.r_p2, ViewBag.departmentList as SelectList, "--select--", new { @class = "form-control" });
+
+                        </li>
+
+
+                    </ul>
+
+                    <ul>
+                        <li class="text">Priority #3 : </li>
+
+                        <li>
+                            @Html.DropDownListFor(model => model.r_p3, ViewBag.departmentList as SelectList, "--select--", new { @class = "form-control" });
+
+                        </li>
+
+
+                    </ul>
+
+                    <ul>
+                        <li class="text">Upload Image : </li>
+                        <li>
+                            <input type="file" name="imgfile" id="imgfile" class="from-control" />
+
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="text">Upload SSC Marksheet : </li>
+                        <li>
+                            <input type="file" name="sscfile" id="sscfile" class="from-control" />
+
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="text">Upload HSC Marksheet : </li>
+                        <li>
+                            <input type="file" name="hscfile" id="hscfile" class="from-control" />
+
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <li class="text">address&nbsp; : </li>
+                        <li><input name="addr 1" type="text" required /></li>
+                    </ul>
+                    <ul>
+                        <li class="text">Country : </li>
+                        <li><input name="country" type="text" required /></li>
+                    </ul>
+                    <div class="clear">     </div>
+                    <div class="agile-submit">
+                        <input type="submit" value="submit" style="background-color:red">
+                        <input type="reset" value="reset" style="background-color:indigo">
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </body>
+    </html>*@
